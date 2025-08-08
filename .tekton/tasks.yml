@@ -33,16 +33,16 @@ spec:
            fi
 ---
 apiVersion: tekton.dev/v1beta1
-kind: task
+kind: Task
 metadata:
   name: nose
 spec:
   workspaces:
     - name: source
   params:
-    - name: Arguments
+    - name: args
       description: Arguments to pass to nose
-      type: starting
+      type: string
       default: "-v"
   steps:
     - name: nosetests
